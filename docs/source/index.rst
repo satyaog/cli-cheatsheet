@@ -163,7 +163,8 @@ tmux
            from a single screen.
 :``tmux``: Open a new window
 :``tmux attach``: Attach to the last detached window
-:``tmux attach [index]``: Attach to a detached terminal
+:``tmux list``: List active sessions
+:``tmux attach -t target-session``: Attach to a detached sessions
 
 * Inside a tmux terminal:
 
