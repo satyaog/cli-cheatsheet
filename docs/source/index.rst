@@ -20,7 +20,7 @@ Command Line Cheat Sheet
        | `cd`_
        | `Tab Key`_
      - | `man`_
-       | `-h | \\-\\-help`_
+       | `-h | --help`_
        | `less`_
      - | `du`_
      - | `tmux`_
@@ -30,6 +30,7 @@ Command Line Cheat Sheet
        | `jobs`_
        | `fg`_
        | `bg`_
+       | `ps`_
        | `kill`_
      - | `chmod`_
        | `Execute Script`_
@@ -37,8 +38,8 @@ Command Line Cheat Sheet
 Navigate
 ********
 
-ls
-==
+``ls``
+======
 
 :``ls [-lh] [DIR]``: List file and directories
 
@@ -57,8 +58,8 @@ ls
     -rw-r--r--  1 user   group     0B  4 oct 14:14 proj1_file1
     -rw-r--r--  1 user   group     0B  4 oct 14:14 proj1_file2
 
-cd
-==
+``cd``
+======
 
 :``cd DIR``: Change current location to a directory
 
@@ -84,11 +85,14 @@ Tab Key
 Help
 ****
 
-man
-===
+``man``
+=======
 
-:``man [command]``: Open the help manual (man page) of a command. The manual will
-                    be shown in a pager. Not all commands have a man page entry.
+Open the help manual (man page) of a command. Not all commands have a man page
+entry.
+
+:``man [command]``: | Open the help manual (man page) of a command.
+                    | `The manual will be shown in a pager.`
 
 .. code-block:: bash
 
@@ -102,17 +106,20 @@ man
          ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file ...]
 
     DESCRIPTION
-         For each operand that names a file of a type other than directory, ls displays its name as well as any requested, associated informa-
-         tion.  For each operand that names a file of type directory, ls displays the names of files contained within that directory, as well
-         as any requested, associated information.
+         For each operand that names a file of a type other than directory, ls displays its name as
+         well as any requested, associated information.  For each operand that names a file of type
+         directory, ls displays the names of files contained within that directory, as well as any
+         requested, associated information.
     [...]
 
--h | \\-\\-help
-===============
+``-h`` | ``--help``
+===================
 
-:``command [-h|--help]``: Display help for a command. Commands might have either
-                          or both options (`-h`, `--help`). The information will
-                          be printed in the console.
+Display help for a command. The information will be printed in the console.
+
+:``command [-h|--help]``: | Display help for a command.
+                          | `Commands might have either or both options
+                            (` ``-h`` `,` ``--help`` `).`
 
 .. code-block:: bash
 
@@ -125,8 +132,8 @@ man
       -a, --all                  do not ignore entries starting with .
     [...]
 
-less
-====
+``less``
+========
 
 :``less``: Useful to scroll text in a pager rather than print it in the console
 
@@ -144,8 +151,8 @@ less
 Disk Usage
 **********
 
-du
-==
+``du``
+======
 
 :``du -sh DIR``: Print the disk usage of a directory
 
@@ -157,14 +164,16 @@ du
 Session Utilities
 *****************
 
-tmux
-====
-:``tmux``: Enables a number of terminals to be created, accessed, and controlled
-           from a single screen.
-:``tmux``: Open a new window
+``tmux``
+========
+
+Enables a number of terminals to be created, accessed, and controlled from a
+single screen.
+
+:``tmux``:        Open a new window
 :``tmux attach``: Attach to the last detached window
-:``tmux list``: List active sessions
-:``tmux attach -t target-session``: Attach to a detached sessions
+:``tmux list``:   List active sessions
+:``tmux attach -t SESSION_INDEX``: Attach to a detached session
 
 * Inside a tmux terminal:
 
@@ -173,8 +182,8 @@ tmux
   :Ctrl+b+x: Closes the current panel
   :Ctrl+b+d: Detach the current window
 
-nohup
-=====
+``nohup``
+=========
 
 :``nohup command &``: Run a command that will NOt HangUP when the terminal closes
 
@@ -188,8 +197,8 @@ Ctrl+Z
 
 :``Ctrl+Z``: Stop (pause) and background the current command
 
-jobs
-====
+``jobs``
+========
 
 :``jobs``: List the background jobs
 
@@ -199,21 +208,34 @@ jobs
     [1]-  Stopped                 command1
     [2]+  Stopped                 command2
 
-fg
-==
+``fg``
+======
 
 :``fg``: Resume the job that's next in the queue
 
-bg
-==
+``bg``
+======
 
 :``bg``: Push the next job in the queue into the background
 
-kill
-====
+``ps``
+======
 
-:``kill [%1|pid]``: Kill a job or a process using the job index or the process id
-                    respectively
+:``ps -fju $USER --forest``: Display the user's process tree
+
+.. code-block:: bash
+
+    UID        PID  PPID  PGID   SID  C STIME TTY          TIME CMD
+    user     26468 25983 25983 25983  0 10:20 ?        00:00:00 sshd: user@pts/0
+    user     26591 26468 26591 26591  0 10:20 pts/0    00:00:00  \_ -bash
+    user     32650 26591 32650 26591  0 10:44 pts/0    00:00:00      \_ ps -fju user --forest
+
+``kill``
+========
+
+:``kill %JOB_INDEX``: Kill a job using the job's index
+:``kill PID``: Kill a process using the process's id
+:``kill -- -PGID``: Kill all process belonging to the process group id
 
 .. code-block:: bash
 
@@ -223,11 +245,11 @@ kill
 Executable
 **********
 
-chmod
-=====
+``chmod``
+=========
 
-:``chmod +x script.sh``: Add the executable permission flag to a script file so it
-                         can be executed
+:``chmod +x script.sh``: Add the executable permission flag to a script file so
+                         it can be executed
 
 Execute Script
 ==============
