@@ -15,6 +15,7 @@ Command Line Cheat Sheet
      - `Help`_
      - `Disk Usage`_
      - `Session Utilities`_
+     - `Network Utilities`_
      - `Executable`_
    * - | `ls`_
        | `cd`_
@@ -32,6 +33,7 @@ Command Line Cheat Sheet
        | `bg`_
        | `ps`_
        | `kill`_
+     - | `rsync`_
      - | `chmod`_
        | `Execute Script`_
 
@@ -175,12 +177,13 @@ single screen.
 :``tmux list``:   List active sessions
 :``tmux attach -t SESSION_INDEX``: Attach to a detached session
 
-* Inside a tmux terminal:
+Inside a tmux terminal
+^^^^^^^^^^^^^^^^^^^^^^
 
-  :Ctrl+b+%: Opens a new panel
-  :Ctrl+b+Left, Right: Change to the left or right panel
-  :Ctrl+b+x: Closes the current panel
-  :Ctrl+b+d: Detach the current window
+:Ctrl+b+%: Opens a new panel
+:Ctrl+b+Left, Right: Change to the left or right panel
+:Ctrl+b+x: Closes the current panel
+:Ctrl+b+d: Detach the current window
 
 ``nohup``
 =========
@@ -241,6 +244,20 @@ Ctrl+Z
 
     $ kill %1
     [1]+  Stopped                 command1
+
+Network Utilities
+*****************
+
+``rsync``
+=========
+
+:``rsync -arv SRC DEST``: Recursively copy from source to destination locally or remotely
+
+Additional Options
+^^^^^^^^^^^^^^^^^^
+
+:``--partial``: Keep partially transferred files
+:``-e "ssh -p PORT"``: Use a non-standard SSH port
 
 Executable
 **********
