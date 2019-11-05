@@ -93,8 +93,8 @@ Help
 Open the help manual (man page) of a command. Not all commands have a man page
 entry.
 
-:``man [command]``: | Open the help manual (man page) of a command.
-                    | `The manual will be shown in a pager.`
+:``man COMMAND``: | Open the help manual (man page) of a command.
+                  | `The manual will be shown in a pager.`
 
 .. code-block:: bash
 
@@ -119,9 +119,9 @@ entry.
 
 Display help for a command. The information will be printed in the console.
 
-:``command [-h|--help]``: | Display help for a command.
-                          | `Commands might have either or both options
-                            (` ``-h`` `,` ``--help`` `).`
+:``command -h|--help``: | Display help for a command.
+                        | `Commands might have either or both options
+                           (` ``-h`` `,` ``--help`` `).`
 
 .. code-block:: bash
 
@@ -156,7 +156,7 @@ Disk Usage
 ``du``
 ======
 
-:``du -sh DIR``: Print the disk usage of a directory
+:``du -sh [DIR]``: Print the disk usage of a directory
 
 .. code-block:: bash
 
@@ -172,9 +172,9 @@ Session Utilities
 Enables a number of terminals to be created, accessed, and controlled from a
 single screen.
 
-:``tmux``:        Open a new window
-:``tmux attach``: Attach to the last detached window
-:``tmux list``:   List active sessions
+:``tmux``:           Open a new window
+:``tmux ls|list``:   List active sessions
+:``tmux attach``:    Attach to the last detached window
 :``tmux attach -t SESSION_INDEX``: Attach to a detached session
 
 Inside a tmux terminal
@@ -188,7 +188,7 @@ Inside a tmux terminal
 ``nohup``
 =========
 
-:``nohup command &``: Run a command that will NOt HangUP when the terminal closes
+:``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal closes
 
 Ctrl+C
 ======
@@ -251,13 +251,13 @@ Network Utilities
 ``rsync``
 =========
 
-:``rsync -arv SRC DEST``: Recursively copy from source to destination locally or remotely
+:``rsync -arv SRC DEST``: Recursively copy from source to destination, locally or remotely
 
 Additional Options
 ^^^^^^^^^^^^^^^^^^
 
-:``--partial``: Keep partially transferred files
-:``-e "ssh -p PORT"``: Use a non-standard SSH port
+--partial            Keep partially transferred files
+-e <"ssh -p PORT">   Use a non-standard SSH port
 
 Executable
 **********
