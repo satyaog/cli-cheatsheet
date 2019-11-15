@@ -3,6 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+########################
 Command Line Cheat Sheet
 ########################
 
@@ -37,6 +38,7 @@ Command Line Cheat Sheet
      - | `chmod`_
        | `Execute Script`_
 
+********
 Navigate
 ********
 
@@ -84,6 +86,7 @@ Tab Key
     proj1/ proj2/
     $ cd proj
 
+****
 Help
 ****
 
@@ -150,6 +153,7 @@ Display help for a command. The information will be printed in the console.
       -a, --all                  do not ignore entries starting with .
     [...]
 
+**********
 Disk Usage
 **********
 
@@ -163,6 +167,7 @@ Disk Usage
     $ du -sh proj1
     1.5K	proj1
 
+*****************
 Session Utilities
 *****************
 
@@ -173,17 +178,33 @@ Enables a number of terminals to be created, accessed, and controlled from a
 single screen.
 
 :``tmux``:           Open a new window
-:``tmux ls|list``:   List active sessions
+:``tmux ls|list``:   List sessions
 :``tmux attach``:    Attach to the last detached window
 :``tmux attach -t SESSION_INDEX``: Attach to a detached session
 
 Inside a tmux terminal
 ^^^^^^^^^^^^^^^^^^^^^^
 
-:Ctrl+b+%: Opens a new panel
-:Ctrl+b+Left, Right: Change to the left or right panel
-:Ctrl+b+x: Closes the current panel
-:Ctrl+b+d: Detach the current window
+Sessions
+""""""""
+
+:<Ctrl+b>+s: List sessions
+:<Ctrl+b>+$: Rename current session
+
+Windows
+"""""""
+
+:<Ctrl+b>+w: List all windows
+:<Ctrl+b>+c: Create a new window
+:<Ctrl+b>+d: Detach the current window
+:<Ctrl+b>+,: Rename current window
+
+Panels
+""""""
+
+:<Ctrl+b>+%: Opens a new panel
+:<Ctrl+b>+Left, Right: Change to the left or right panel
+:<Ctrl+b>+x: Closes the current panel
 
 ``nohup``
 =========
@@ -245,6 +266,7 @@ Ctrl+Z
     $ kill %1
     [1]+  Stopped                 command1
 
+*****************
 Network Utilities
 *****************
 
@@ -259,6 +281,7 @@ Additional Options
 --partial            Keep partially transferred files
 -e <"ssh -p PORT">   Use a non-standard SSH port
 
+**********
 Executable
 **********
 
