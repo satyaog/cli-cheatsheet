@@ -199,12 +199,12 @@ Windows
 :<Ctrl+b>+d: Detach the current window
 :<Ctrl+b>+,: Rename current window
 
-Panels
+Panes
 """"""
 
-:<Ctrl+b>+%: Opens a new panel
-:<Ctrl+b>+Left, Right: Change to the left or right panel
-:<Ctrl+b>+x: Closes the current panel
+:<Ctrl+b>+%: Opens a new pane
+:<Ctrl+b>+Left, Right: Change to the left or right pane
+:<Ctrl+b>+x: Closes the current pane
 
 ``nohup``
 =========
