@@ -183,16 +183,16 @@ single screen.
 :``tmux attach -t SESSION_INDEX``: Attach to a detached session
 
 Inside a tmux terminal
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 Sessions
-""""""""
+^^^^^^^^
 
 :<Ctrl+b>+s: List sessions
 :<Ctrl+b>+$: Rename current session
 
 Windows
-"""""""
+^^^^^^^
 
 :<Ctrl+b>+w: List all windows
 :<Ctrl+b>+c: Create a new window
@@ -200,7 +200,7 @@ Windows
 :<Ctrl+b>+,: Rename current window
 
 Panes
-""""""
+^^^^^
 
 :<Ctrl+b>+%: Opens a new pane
 :<Ctrl+b>+Left, Right: Change to the left or right pane
@@ -276,7 +276,7 @@ Network Utilities
 :``rsync -arv SRC DEST``: Recursively copy from source to destination, locally or remotely
 
 Additional Options
-^^^^^^^^^^^^^^^^^^
+------------------
 
 --partial            Keep partially transferred files
 -e <"ssh -p PORT">   Use a non-standard SSH port
