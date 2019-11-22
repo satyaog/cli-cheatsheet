@@ -12,14 +12,17 @@ Command Line Cheat Sheet
 .. list-table::
    :header-rows: 1
 
-   * - `Navigate`_
+   * - `File Exploration`_
      - `Help`_
      - `Disk Usage`_
      - `Session Utilities`_
      - `Network Utilities`_
+     - `Archiving`_
      - `Executable`_
    * - | `ls`_
        | `cd`_
+       | `cp`_
+       | `mv`_
        | `Tab Key`_
      - | `man`_
        | `-h | --help`_
@@ -35,12 +38,13 @@ Command Line Cheat Sheet
        | `ps`_
        | `kill`_
      - | `rsync`_
+     - | `tar`_
      - | `chmod`_
        | `Execute Script`_
 
-********
-Navigate
-********
+****************
+File Exploration
+****************
 
 ``ls``
 ======
@@ -74,6 +78,18 @@ Navigate
     $ cd proj1
     $ ls
     proj1_file1	proj1_file2
+
+``cp``
+======
+
+:``cp SRC DEST``: Copy a file or directory.
+:``cp -Rt DIR SRC...``: Copy files and/or directories to a directory.
+
+``mv``
+======
+
+:``mv SRC DEST``: Move or rename a file or directory.
+:``mv -t DIR SRC...``: Move files and/or directories to a directory.
 
 Tab Key
 =======
@@ -280,6 +296,22 @@ Additional Options
 
 --partial            Keep partially transferred files
 -e <"ssh -p PORT">   Use a non-standard SSH port
+
+*********
+Archiving
+*********
+
+``tar``
+=======
+
+:``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of directories
+:``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it using gzip
+
+Additional Options
+------------------
+
+-r             Append files to the .tar archive. This replaces ``-c``.
+--sort=name    Sort the directory entries on name.
 
 **********
 Executable
