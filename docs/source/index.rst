@@ -306,6 +306,8 @@ Archiving
 
 :``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of directories
 :``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it using gzip
+:``tar -xf TAR_NAME.tar``:             Extract a .tar archive
+:``tar -xzf TAR_NAME.tar.gz``:         Extract a .tar archive compressed with gzip
 
 Additional Options
 ------------------
