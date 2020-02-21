@@ -306,12 +306,12 @@ Archiving
 
 :``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of directories
 :``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it using gzip
-:``tar -xf TAR_NAME.tar``:             Extract a .tar archive
-:``tar -xzf TAR_NAME.tar.gz``:         Extract a .tar archive compressed with gzip
+:``tar -xf TAR_NAME.tar -C DIR``:      Extract a .tar archive into a directory
+:``tar -xzf TAR_NAME.tar.gz -C DIR``:  Extract a .tar archive compressed with gzip into a directory
 
 Additional Options
 ------------------
-
+  
 -r             Append files to the .tar archive. This replaces ``-c``.
 --sort=name    Sort the directory entries on name.
 
