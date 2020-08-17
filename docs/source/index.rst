@@ -12,7 +12,8 @@ Command Line Cheat Sheet
 .. list-table::
    :header-rows: 1
 
-   * - `File Exploration`_
+   * - `Browsing`_
+     - `Access Rights`_
      - `Help`_
      - `Disk Usage`_
      - `Session Utilities`_
@@ -24,6 +25,8 @@ Command Line Cheat Sheet
        | `cp`_
        | `mv`_
        | `Tab Key`_
+     - | `chmod`_
+       | `setfacl`_
      - | `man`_
        | `-h | --help`_
        | `less`_
@@ -42,9 +45,9 @@ Command Line Cheat Sheet
      - | `chmod`_
        | `Execute Script`_
 
-****************
-File Exploration
-****************
+********
+Browsing
+********
 
 ``ls``
 ======
@@ -69,7 +72,8 @@ File Exploration
 ``cd``
 ======
 
-:``cd DIR``: Change current location to a directory
+:``cd DIR``:
+    Change current location to a directory
 
 .. code-block:: bash
 
@@ -82,14 +86,20 @@ File Exploration
 ``cp``
 ======
 
-:``cp SRC DEST``: Copy a file or directory.
-:``cp -Rt DIR SRC...``: Copy files and/or directories to a directory.
+:``cp SRC DEST``:
+    Copy a file or directory.
+
+:``cp -Rt DIR SRC...``:
+    Copy files and/or directories to a directory.
 
 ``mv``
 ======
 
-:``mv SRC DEST``: Move or rename a file or directory.
-:``mv -t DIR SRC...``: Move files and/or directories to a directory.
+:``mv SRC DEST``:
+    Move or rename a file or directory.
+
+:``mv -t DIR SRC...``:
+    Move files and/or directories to a directory. 
 
 Tab Key
 =======
@@ -102,6 +112,47 @@ Tab Key
     proj1/ proj2/
     $ cd proj
 
+*************
+Access Rights
+*************
+
+``chmod``
+=========
+
+:``chmod MODE[,MODE] FILE``:
+    Set the file mode bits
+
+``MODE`` format
+---------------
+
+The format of ``MODE`` is ``[ugo][[-+][perms...]...]``, where ``perms`` is one or more letters from the set ``rwxX``
+
+:``r``: read bit
+:``w``: write bit
+:``x``: execute bit
+:``X``: execute bit if already set or if the target is a directory
+
+``setfacl``
+===========
+
+:``setfacl {--set[-file]|--modify[-file]} MODE {FILE|DIR}``: Set or modify file access control lists
+
+``MODE`` format
+---------------
+
+``[u:]uid:perms``
+    Set user mode bits where ``perms`` is one or more letters from the set ``rwx``
+
+``[g:]gid:perms``
+    Set group mode bits where ``perms`` is one or more letters from the set ``rwx``
+
+``o:perms``
+    Set other mode bits where ``perms`` is one or more letters from the set ``rwx``
+
+:``r``: read bit
+:``w``: write bit
+:``x``: execute bit
+
 ****
 Help
 ****
@@ -112,8 +163,10 @@ Help
 Open the help manual (man page) of a command. Not all commands have a man page
 entry.
 
-:``man COMMAND``: | Open the help manual (man page) of a command.
-                  | `The manual will be shown in a pager.`
+:``man COMMAND``: 
+    Open the help manual (man page) of a command.
+    
+    `The manual will be shown in a pager.`
 
 .. code-block:: bash
 
@@ -294,8 +347,8 @@ Network Utilities
 Additional Options
 ------------------
 
---partial            Keep partially transferred files
--e <"ssh -p PORT">   Use a non-standard SSH port
+--partial          Keep partially transferred files
+-e <"ssh -p PORT"> Use a non-standard SSH port
 
 *********
 Archiving
