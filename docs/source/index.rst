@@ -42,7 +42,7 @@ Command Line Cheat Sheet
        | `kill`_
      - | `rsync`_
      - | `tar`_
-     - | `chmod`_
+     - | `chmod (execute bit)`_
        | `Execute Script`_
 
 ********
@@ -372,10 +372,10 @@ Additional Options
 Executable
 **********
 
-``chmod``
-=========
+``chmod`` (execute mode bit)
+============================
 
-:``chmod +x script.sh``: Add the executable permission flag to a script file so
+:``chmod +x script.sh``: Add the execute mode bit to a script file so
                          it can be executed
 
 Execute Script
