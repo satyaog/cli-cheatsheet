@@ -372,7 +372,7 @@ Additional Options
 Executable
 **********
 
-``chmod`` (execute mode bit)
+``chmod`` (execute bit)
 ============================
 
 :``chmod +x script.sh``: Add the execute mode bit to a script file so
