@@ -342,13 +342,22 @@ Network Utilities
 ``rsync``
 =========
 
-:``rsync -arv SRC DEST``: Recursively copy from source to destination, locally or remotely
+:``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to destination, locally or remotely
 
 Additional Options
 ------------------
 
---partial          Keep partially transferred files
--e <"ssh -p PORT"> Use a non-standard SSH port
+--partial            Keep partially transferred files
+--relative
+   Copy "implied directories" as well as the last part of ``SRC``. Ex.: **foo/bar/** in:
+   
+   ``rsync -arLv --relative /foo/bar/baz.c ...``
+
+   Inserting a **./** in a ``SRC`` path will limit the amount of path information that is sent as implied directories. Ex.: **bar/** in:
+   
+   ``rsync -arLv --relative /foo/./bar/baz.c ...``
+-e <"ssh -p PORT">
+   Use a non-standard SSH port
 
 *********
 Archiving
