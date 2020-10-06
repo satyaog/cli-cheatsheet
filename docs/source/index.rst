@@ -72,8 +72,7 @@ Browsing
 ``cd``
 ======
 
-:``cd DIR``:
-    Change current location to a directory
+:``cd DIR``: Change current location to a directory
 
 .. code-block:: bash
 
@@ -86,20 +85,14 @@ Browsing
 ``cp``
 ======
 
-:``cp SRC DEST``:
-    Copy a file or directory.
-
-:``cp -Rt DIR SRC...``:
-    Copy files and/or directories to a directory.
+:``cp SRC DEST``:       Copy a file or directory.
+:``cp -Rt DIR SRC...``: Copy files and/or directories to a directory.
 
 ``mv``
 ======
 
-:``mv SRC DEST``:
-    Move or rename a file or directory.
-
-:``mv -t DIR SRC...``:
-    Move files and/or directories to a directory. 
+:``mv SRC DEST``:      Move or rename a file or directory.
+:``mv -t DIR SRC...``: Move files and/or directories to a directory. 
 
 Tab Key
 =======
@@ -119,23 +112,28 @@ Access Rights
 ``chmod``
 =========
 
-:``chmod MODE[,MODE] FILE``:
-    Set the file mode bits
+:``chmod MODE[,MODE] FILE``: Set the file mode bits
 
 ``MODE`` format
 ---------------
 
-The format of ``MODE`` is ``[ugo][[-+][perms...]...]``, where ``perms`` is one or more letters from the set ``rwxX``
+The format of ``MODE`` is ``{ugo}{+-}perms[,...]``, where ``perms`` is one or more letters from the set ``rwxX``
 
-:``r``: read bit
-:``w``: write bit
-:``x``: execute bit
-:``X``: execute bit if already set or if the target is a directory
+:``u``:  set user mode bits
+:``g``:  set group mode bits
+:``o``:  set other mode bits
+:``+-``: add/remove mode bits
+:``r``:  read bit
+:``w``:  write bit
+:``x``:  execute bit
+:``X``:  execute bit if already set or if the target is a directory
 
 ``setfacl``
 ===========
 
-:``setfacl {--set[-file]|--modify[-file]} MODE {FILE|DIR}``: Set or modify file access control lists
+:``setfacl {--set[-file]|--modify[-file]} MODE {DIR|FILE}``:
+    Set (purge previous acl permissions) or modify file access control lists.
+    ``--set[-file]`` requires permissions of user, group and other to be listed.
 
 ``MODE`` format
 ---------------
@@ -152,6 +150,7 @@ The format of ``MODE`` is ``[ugo][[-+][perms...]...]``, where ``perms`` is one o
 :``r``: read bit
 :``w``: write bit
 :``x``: execute bit
+:``X``: execute bit if already set or if the target is a directory
 
 ****
 Help
