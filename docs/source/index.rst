@@ -138,19 +138,34 @@ The format of ``MODE`` is ``{ugo}{+-}perms[,...]``, where ``perms`` is one or mo
 ``MODE`` format
 ---------------
 
+The format of ``MODE`` is ``u::perms,g::perms,o::perms[,...]``, where ``perms`` is one or more letters from the set ``rwxX``
+
 ``[u:]uid:perms``
-    Set user mode bits where ``perms`` is one or more letters from the set ``rwx``
+    Set user mode bits where ``perms`` is one or more letters from the set ``rwxX``
 
 ``[g:]gid:perms``
-    Set group mode bits where ``perms`` is one or more letters from the set ``rwx``
+    Set group mode bits where ``perms`` is one or more letters from the set ``rwxX``
 
 ``o:perms``
-    Set other mode bits where ``perms`` is one or more letters from the set ``rwx``
+    Set other mode bits where ``perms`` is one or more letters from the set ``rwxX``
 
 :``r``: read bit
 :``w``: write bit
 :``x``: execute bit
 :``X``: execute bit if already set or if the target is a directory
+
+.. code-block:: bash
+
+    $ setfacl --set u::rwx,g::-,o::-,g:groupid:rwx dir/
+    $ getfacl dir/
+    # file: dir/
+    # owner: ownerid
+    # group: groupid
+    user::rwx
+    group::---
+    group:groupid:rwx
+    mask::rwx
+    other::---
 
 ****
 Help
