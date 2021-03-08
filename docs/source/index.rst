@@ -370,6 +370,11 @@ Additional Options
    Inserting a **./** in a ``SRC`` path will limit the amount of path information that is sent as implied directories. Ex.: **bar/** in:
    
    ``rsync -arLv --relative /foo/./bar/baz.c ...``
+--bwlimit=RATE       specify the maximum transfer rate for the data sent over the *socket*, specified in units per second. Ex.: 10 megabytes/sec bandwidth:
+
+   ``rsync -arLv --bwlimit=10mb REMOTE:/foo/ foo/``
+   
+   ``rsync -arLv --bwlimit=10mb foo/ REMOTE:/foo/``
 -e <"ssh -p PORT">
    Use a non-standard SSH port
 
