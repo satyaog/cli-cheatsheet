@@ -112,7 +112,7 @@ Tab Key
                       console. Use `q` to quit.
 :``less -r +F FILE``: Scroll forward the text of a log file and keep trying to
                       read to update the pager as new content gets written into
-                      the file. Use `Ctrl+C`_ to interrupt the _following_ and
+                      the file. Use `Ctrl+C`_ to interrupt the *following* and
                       scroll back.
 
 .. code-block:: bash
