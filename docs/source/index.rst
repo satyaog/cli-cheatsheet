@@ -1,7 +1,7 @@
-.. Command Line Cheat Sheet documentation master file, created by
-   sphinx-quickstart on Wed Oct  9 15:43:28 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Command Line Cheat Sheet documentation mVaster file, created by
+   sphinx-quickstart on Wed Oct  9 15:43:28 2019.  You can adapt this file
+   completely to your liking, but it should at least contain the root `toctree`
+   directive.
 
 ########################
 Command Line Cheat Sheet
@@ -25,11 +25,11 @@ Command Line Cheat Sheet
        | `cp`_
        | `mv`_
        | `Tab Key`_
+       | `less`_
      - | `chmod`_
        | `setfacl`_
      - | `man`_
        | `-h | --help`_
-       | `less`_
      - | `du`_
      - | `tmux`_
        | `nohup`_
@@ -105,6 +105,34 @@ Tab Key
     proj1/ proj2/
     $ cd proj
 
+``less``
+========
+
+:``less -r FILE``:    Visualize text in a pager rather than print it in the
+                      console. Use `q` to quit.
+:``less -r +F FILE``: Scroll forward the text of a log file and keep trying to
+                      read to update the pager as new content gets written into
+                      the file. Use `Ctrl+C`_ to interrupt the _following_ and
+                      scroll back.
+
+.. code-block:: bash
+
+    $ (for i in {1..10}; do (echo $i >> log_file.out; sleep 2) ; done) &
+    $ less -r +F log_file.out
+    [...]
+    ~
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    Waiting for data... (interrupt to abort)
+
 *************
 Access Rights
 *************
@@ -117,7 +145,8 @@ Access Rights
 ``MODE`` format
 ---------------
 
-The format of ``MODE`` is ``{ugo}{+-}perms[,...]``, where ``perms`` is one or more letters from the set ``rwxX``
+The format of ``MODE`` is ``{ugo}{+-}perms[,...]``, where ``perms`` is one or
+more letters from the set ``rwxX``
 
 :``u``:  set user mode bits
 :``g``:  set group mode bits
@@ -138,16 +167,20 @@ The format of ``MODE`` is ``{ugo}{+-}perms[,...]``, where ``perms`` is one or mo
 ``MODE`` format
 ---------------
 
-The format of ``MODE`` is ``u::perms,g::perms,o::perms[,...]``, where ``perms`` is one or more letters from the set ``rwxX``
+The format of ``MODE`` is ``u::perms,g::perms,o::perms[,...]``, where ``perms``
+is one or more letters from the set ``rwxX``
 
 ``[u:]uid:perms``
-    Set user mode bits where ``perms`` is one or more letters from the set ``rwxX``
+    Set user mode bits where ``perms`` is one or more letters from the set
+    ``rwxX``
 
 ``[g:]gid:perms``
-    Set group mode bits where ``perms`` is one or more letters from the set ``rwxX``
+    Set group mode bits where ``perms`` is one or more letters from the set
+    ``rwxX``
 
 ``o:perms``
-    Set other mode bits where ``perms`` is one or more letters from the set ``rwxX``
+    Set other mode bits where ``perms`` is one or more letters from the set
+    ``rwxX``
 
 :``r``: read bit
 :``w``: write bit
@@ -205,9 +238,11 @@ entry.
 
 Display help for a command. The information will be printed in the console.
 
-:``command -h|--help``: | Display help for a command.
-                        | `Commands might have either or both options
-                           (` ``-h`` `,` ``--help`` `).`
+:``command (-h|--help)``:        | Display help for a command.
+                                 | `Commands might have either or both options
+                                    (` ``-h`` `,` ``--help`` `).`
+:``command (-h|--help) | less``: Useful to scroll text in a pager rather than
+                                 print it in the console
 
 .. code-block:: bash
 
@@ -219,14 +254,6 @@ Display help for a command. The information will be printed in the console.
     Mandatory arguments to long options are mandatory for short options too.
       -a, --all                  do not ignore entries starting with .
     [...]
-
-``less``
-========
-
-:``less``: Useful to scroll text in a pager rather than print it in the console
-
-.. code-block:: bash
-
     $ ls --help | less
     Usage: ls [OPTION]... [FILE]...
     List information about the FILEs (the current directory by default).
@@ -292,7 +319,8 @@ Panes
 ``nohup``
 =========
 
-:``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal closes
+:``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal
+closes
 
 Ctrl+C
 ======
@@ -356,21 +384,26 @@ Network Utilities
 ``rsync``
 =========
 
-:``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to destination, locally or remotely
+:``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to
+destination, locally or remotely
 
 Additional Options
 ------------------
 
 --partial            Keep partially transferred files
 --relative
-   Copy "implied directories" as well as the last part of ``SRC``. Ex.: **foo/bar/** in:
+   Copy "implied directories" as well as the last part of ``SRC``. Ex.:
+   **foo/bar/** in:
    
    ``rsync -arLv --relative /foo/bar/baz.c ...``
 
-   Inserting a **./** in a ``SRC`` path will limit the amount of path information that is sent as implied directories. Ex.: **bar/** in:
+   Inserting a **./** in a ``SRC`` path will limit the amount of path
+   information that is sent as implied directories. Ex.: **bar/** in:
    
    ``rsync -arLv --relative /foo/./bar/baz.c ...``
---bwlimit=RATE       specify the maximum transfer rate for the data sent over the *socket*, specified in units per second. Ex.: 10 megabytes/sec bandwidth:
+--bwlimit=RATE
+   Specify the maximum transfer rate for the data sent over the *socket*,
+   specified in units per second. Ex.: 10 megabytes/sec bandwidth:
 
    ``rsync -arLv --bwlimit=10mb REMOTE:/foo/ foo/``
    
@@ -385,10 +418,13 @@ Archiving
 ``tar``
 =======
 
-:``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of directories
-:``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it using gzip
+:``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of
+                                       directories
+:``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it
+                                       using gzip
 :``tar -xf TAR_NAME.tar -C DIR``:      Extract a .tar archive into a directory
-:``tar -xzf TAR_NAME.tar.gz -C DIR``:  Extract a .tar archive compressed with gzip into a directory
+:``tar -xzf TAR_NAME.tar.gz -C DIR``:  Extract a .tar archive compressed with
+                                       gzip into a directory
 
 Additional Options
 ------------------
@@ -403,8 +439,8 @@ Executable
 ``chmod`` (execute bit)
 ============================
 
-:``chmod +x script.sh``: Add the execute mode bit to a script file so
-                         it can be executed
+:``chmod +x script.sh``: Add the execute mode bit to a script file so it can be
+                         executed
 
 Execute Script
 ==============
