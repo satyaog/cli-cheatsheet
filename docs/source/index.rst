@@ -200,6 +200,8 @@ is one or more letters from the set ``rwxX``
 :``x``: execute bit
 :``X``: execute bit if already set or if the target is a directory
 
+\
+
 .. code-block:: bash
 
     $ setfacl --set u::rwx,g::-,o::-,g:groupid:rwx dir/
