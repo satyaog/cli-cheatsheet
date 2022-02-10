@@ -10,42 +10,41 @@ Command Line Cheat Sheet
 \
 
 .. list-table::
-   :header-rows: 1
    :stub-columns: 1
    :widths: auto
 
    * - `Browsing`_
-     - `Access Rights`_
-     - `Help`_
-     - `Disk Usage`_
-     - `Session Utilities`_
-     - `Network Utilities`_
-     - `Archiving`_
-     - `Executable`_
-   * - | `ls`_
-       | `cd`_
-       | `cp`_
-       | `mv`_
-       | `Tab Key`_
-       | `less`_
-     - | `chmod`_
-       | `setfacl`_
-     - | `man`_
-       | `-h | --help`_
-     - | `du`_
-     - | `tmux`_
-       | `nohup`_
-       | `Ctrl+C`_
-       | `Ctrl+Z`_
-       | `jobs`_
-       | `fg`_
-       | `bg`_
-       | `ps`_
-       | `kill`_
-     - | `rsync`_
-     - | `tar`_
-     - | `chmod (execute bit)`_
-       | `Execute Script`_
+     - `ls`_
+     - `cd`_
+     - `cp`_
+     - `mv`_
+     - `Tab Key`_
+     - `less`_
+   * - `Access Rights`_
+     - `chmod`_
+     - `setfacl`_
+   * - `Help`_
+     - `man`_
+     - `-h | --help`_
+   * - `Disk Usage`_
+     - `du`_
+   * - `Session Utilities`_
+     - `tmux`_
+     - `nohup`_
+     - `Ctrl+C`_
+     - `Ctrl+Z`_
+     - `jobs`_
+     - `fg`_
+     - `bg`_
+     - `ps`_
+     - `kill`_
+   * - `Network Utilities`_
+     - `rsync`_
+   * - `Archiving`_
+     - `tar`_
+   * - `Executable`_
+     - `chmod (execute bit)`_
+     - `Execute Script`_
 
 ********
 Browsing
