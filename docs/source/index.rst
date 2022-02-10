@@ -11,6 +11,8 @@ Command Line Cheat Sheet
 
 .. list-table::
    :header-rows: 1
+   :widths: auto
+   :align: top
 
    * - `Browsing`_
      - `Access Rights`_
