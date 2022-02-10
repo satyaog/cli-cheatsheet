@@ -97,13 +97,16 @@ Browsing
 ``mv``
 ======
 
-:``mv SRC DEST``:      Move or rename a file or directory.
-:``mv -t DIR SRC...``: Move files and/or directories to a directory. 
+``mv SRC DEST``
+   Move or rename a file or directory.
+``mv -t DIR SRC...``
+   Move files and/or directories to a directory. 
 
 Tab Key
 =======
 
-:Tab key: Auto-complete the text
+*Tab key*
+   Auto-complete the text
 
 .. code-block:: bash
 
@@ -114,12 +117,13 @@ Tab Key
 ``less``
 ========
 
-:``less -r FILE``:    Visualize text in a pager rather than print it in the
-                      console. Use `q` to quit.
-:``less -r +F FILE``: Scroll forward the text of a log file and keep trying to
-                      read to update the pager as new content gets written into
-                      the file. Use `Ctrl+C`_ to interrupt the *following* and
-                      scroll back.
+``less -r FILE``
+   Visualize text in a pager rather than print it in the console. Use `q` to
+   quit.
+``less -r +F FILE``
+   Scroll forward the text of a log file and keep trying to read to update the
+   pager as new content gets written into the file. Use `Ctrl+C`_ to interrupt
+   the *following* and scroll back.
 
 .. code-block:: bash
 
@@ -146,7 +150,8 @@ Access Rights
 ``chmod``
 =========
 
-:``chmod MODE[,MODE] FILE``: Set the file mode bits
+``chmod MODE[,MODE] FILE``
+   Set the file mode bits
 
 ``MODE`` format
 ---------------
@@ -157,7 +162,7 @@ more letters from the set ``rwxX``
 :``u``:  set user mode bits
 :``g``:  set group mode bits
 :``o``:  set other mode bits
-:``+-``: add/remove mode bits
+:``+-``:  add/remove mode bits
 :``r``:  read bit
 :``w``:  write bit
 :``x``:  execute bit
@@ -176,17 +181,12 @@ more letters from the set ``rwxX``
 The format of ``MODE`` is ``u::perms,g::perms,o::perms[,...]``, where ``perms``
 is one or more letters from the set ``rwxX``
 
-``[u:]uid:perms``
-    Set user mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
-
-``[g:]gid:perms``
-    Set group mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
-
-``o:perms``
-    Set other mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
+:``[u:]uid:perms``:  Set user mode bits where ``perms`` is one or more letters
+                     from the set ``rwxX``
+:``[g:]gid:perms``:  Set group mode bits where ``perms`` is one or more letters
+                     from the set ``rwxX``
+:``o:perms``:  Set other mode bits where ``perms`` is one or more letters from
+               the set ``rwxX``
 
 :``r``: read bit
 :``w``: write bit
@@ -216,10 +216,10 @@ Help
 Open the help manual (man page) of a command. Not all commands have a man page
 entry.
 
-:``man COMMAND``: 
-    Open the help manual (man page) of a command.
-    
-    `The manual will be shown in a pager.`
+``man COMMAND``
+   Open the help manual (man page) of a command.
+   
+   `The manual will be shown in a pager.`
 
 .. code-block:: bash
 
