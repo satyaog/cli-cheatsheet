@@ -1,7 +1,6 @@
-.. Command Line Cheat Sheet documentation mVaster file, created by
-   sphinx-quickstart on Wed Oct  9 15:43:28 2019.  You can adapt this file
-   completely to your liking, but it should at least contain the root `toctree`
-   directive.
+.. Command Line Cheat Sheet documentation master file, created by
+   sphinx-quickstart on Wed Oct 9 15:43:28 2019. You can adapt this file completely
+   to your liking, but it should at least contain the root `toctree` directive.
 
 ########################
 Command Line Cheat Sheet
@@ -10,40 +9,42 @@ Command Line Cheat Sheet
 \
 
 .. list-table::
-   :header-rows: 1
+   :stub-columns: 1
+   :widths: auto
+   :width: 100%
 
    * - `Browsing`_
-     - `Access Rights`_
-     - `Help`_
-     - `Disk Usage`_
-     - `Session Utilities`_
-     - `Network Utilities`_
-     - `Archiving`_
-     - `Executable`_
-   * - | `ls`_
-       | `cd`_
-       | `cp`_
-       | `mv`_
-       | `Tab Key`_
-       | `less`_
-     - | `chmod`_
-       | `setfacl`_
-     - | `man`_
-       | `-h | --help`_
-     - | `du`_
-     - | `tmux`_
-       | `nohup`_
-       | `Ctrl+C`_
-       | `Ctrl+Z`_
-       | `jobs`_
-       | `fg`_
-       | `bg`_
-       | `ps`_
-       | `kill`_
-     - | `rsync`_
-     - | `tar`_
-     - | `chmod (execute bit)`_
-       | `Execute Script`_
+     - `ls`_ *---*
+       `cd`_ *---*
+       `cp`_ *---*
+       `mv`_ *---*
+       `Tab Key`_ *---*
+       `less`_
+   * - `Access Rights`_
+     - `chmod`_ ---
+       `setfacl`_
+   * - `Help`_
+     - `man`_ ---
+       `-h | \--help`_
+   * - `Disk Usage`_
+     - `du`_
+   * - `Session Utilities`_
+     - `tmux`_ ---
+       `nohup`_ ---
+       `Ctrl+C`_ ---
+       `Ctrl+Z`_ ---
+       `jobs`_ ---
+       `fg`_ ---
+       `bg`_ ---
+       `ps`_ ---
+       `kill`_
+   * - `Network Utilities`_
+     - `rsync`_
+   * - `Archiving`_
+     - `tar`_
+   * - `Executable`_
+     - `chmod (execute bit)`_ ---
+       `Execute Script`_
 
 ********
 Browsing
@@ -52,7 +53,8 @@ Browsing
 ``ls``
 ======
 
-:``ls [-lh] [DIR]``: List file and directories
+``ls [-lh] [DIR]``
+   List file and directories
 
 .. code-block:: bash
 
@@ -72,7 +74,8 @@ Browsing
 ``cd``
 ======
 
-:``cd DIR``: Change current location to a directory
+``cd DIR``
+   Change current location to a directory
 
 .. code-block:: bash
 
@@ -85,19 +88,24 @@ Browsing
 ``cp``
 ======
 
-:``cp SRC DEST``:       Copy a file or directory.
-:``cp -Rt DIR SRC...``: Copy files and/or directories to a directory.
+``cp SRC DEST``
+   Copy a file or directory.
+``cp -Rt DIR SRC...``
+   Copy files and/or directories to a directory.
 
 ``mv``
 ======
 
-:``mv SRC DEST``:      Move or rename a file or directory.
-:``mv -t DIR SRC...``: Move files and/or directories to a directory. 
+``mv SRC DEST``
+   Move or rename a file or directory.
+``mv -t DIR SRC...``
+   Move files and/or directories to a directory. 
 
 Tab Key
 =======
 
-:Tab key: Auto-complete the text
+*Tab key*
+   Auto-complete the text
 
 .. code-block:: bash
 
@@ -108,12 +116,13 @@ Tab Key
 ``less``
 ========
 
-:``less -r FILE``:    Visualize text in a pager rather than print it in the
-                      console. Use `q` to quit.
-:``less -r +F FILE``: Scroll forward the text of a log file and keep trying to
-                      read to update the pager as new content gets written into
-                      the file. Use `Ctrl+C`_ to interrupt the *following* and
-                      scroll back.
+``less -r FILE``
+   Visualize text in a pager rather than print it in the console. Use `q` to
+   quit.
+``less -r +F FILE``
+   Scroll forward the text of a log file and keep trying to read to update the
+   pager as new content gets written into the file. Use `Ctrl+C`_ to interrupt
+   the *following* and scroll back.
 
 .. code-block:: bash
 
@@ -140,7 +149,8 @@ Access Rights
 ``chmod``
 =========
 
-:``chmod MODE[,MODE] FILE``: Set the file mode bits
+``chmod MODE[,MODE] FILE``
+   Set the file mode bits
 
 ``MODE`` format
 ---------------
@@ -151,7 +161,10 @@ more letters from the set ``rwxX``
 :``u``:  set user mode bits
 :``g``:  set group mode bits
 :``o``:  set other mode bits
-:``+-``: add/remove mode bits
+:``+-``:  add/remove mode bits
+
+\
+
 :``r``:  read bit
 :``w``:  write bit
 :``x``:  execute bit
@@ -160,7 +173,7 @@ more letters from the set ``rwxX``
 ``setfacl``
 ===========
 
-:``setfacl {--set[-file]|--modify[-file]} MODE {DIR|FILE}``:
+``setfacl {--set[-file]|--modify[-file]} MODE {DIR|FILE}``
     Set (purge previous acl permissions) or modify file access control lists.
     ``--set[-file]`` requires permissions of user, group and other to be listed.
 
@@ -170,17 +183,14 @@ more letters from the set ``rwxX``
 The format of ``MODE`` is ``u::perms,g::perms,o::perms[,...]``, where ``perms``
 is one or more letters from the set ``rwxX``
 
-``[u:]uid:perms``
-    Set user mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
+:``[u:]uid:perms``:  Set user mode bits where ``perms`` is one or more letters
+                     from the set ``rwxX``
+:``[g:]gid:perms``:  Set group mode bits where ``perms`` is one or more letters
+                     from the set ``rwxX``
+:``o:perms``:  Set other mode bits where ``perms`` is one or more letters from
+               the set ``rwxX``
 
-``[g:]gid:perms``
-    Set group mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
-
-``o:perms``
-    Set other mode bits where ``perms`` is one or more letters from the set
-    ``rwxX``
+\
 
 :``r``: read bit
 :``w``: write bit
@@ -210,10 +220,10 @@ Help
 Open the help manual (man page) of a command. Not all commands have a man page
 entry.
 
-:``man COMMAND``: 
-    Open the help manual (man page) of a command.
-    
-    `The manual will be shown in a pager.`
+``man COMMAND``
+   Open the help manual (man page) of a command.
+   
+   `The manual will be shown in a pager.`
 
 .. code-block:: bash
 
@@ -238,11 +248,12 @@ entry.
 
 Display help for a command. The information will be printed in the console.
 
-:``command (-h|--help)``:        | Display help for a command.
-                                 | `Commands might have either or both options
-                                    (` ``-h`` `,` ``--help`` `).`
-:``command (-h|--help) | less``: Useful to scroll text in a pager rather than
-                                 print it in the console
+``command (-h|--help)``
+   | Display help for a command.
+   | `Commands might have either or both options
+      (` ``-h`` `,` ``--help`` `).`
+``command (-h|--help) | less``
+   Useful to scroll text in a pager rather than print it in the console
 
 .. code-block:: bash
 
@@ -270,7 +281,8 @@ Disk Usage
 ``du``
 ======
 
-:``du -sh [DIR]``: Print the disk usage of a directory
+``du -sh [DIR]``
+   Print the disk usage of a directory
 
 .. code-block:: bash
 
@@ -287,10 +299,14 @@ Session Utilities
 Enables a number of terminals to be created, accessed, and controlled from a
 single screen.
 
-:``tmux``:           Open a new window
-:``tmux ls|list``:   List sessions
-:``tmux attach``:    Attach to the last detached window
-:``tmux attach -t SESSION_INDEX``: Attach to a detached session
+``tmux``
+   Open a new window
+``tmux ls|list``
+   List sessions
+``tmux attach``
+   Attach to the last detached window
+``tmux attach -t SESSION_INDEX``
+   Attach to a detached session
 
 Inside a tmux terminal
 ----------------------
@@ -319,23 +335,26 @@ Panes
 ``nohup``
 =========
 
-:``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal
-closes
+``nohup COMMAND &``
+   Run a command that will NOt HangUP when the terminal closes
 
 Ctrl+C
 ======
 
-:``Ctrl+C``: Interrupt the current command
+``Ctrl+C``
+   Interrupt the current command
 
 Ctrl+Z
 ======
 
-:``Ctrl+Z``: Stop (pause) and background the current command
+``Ctrl+Z``
+   Stop (pause) and background the current command
 
 ``jobs``
 ========
 
-:``jobs``: List the background jobs
+``jobs``
+   List the background jobs
 
 .. code-block:: bash
 
@@ -346,17 +365,20 @@ Ctrl+Z
 ``fg``
 ======
 
-:``fg``: Resume the job that's next in the queue
+``fg``
+   Resume the job that's next in the queue
 
 ``bg``
 ======
 
-:``bg``: Push the next job in the queue into the background
+``bg``
+   Push the next job in the queue into the background
 
 ``ps``
 ======
 
-:``ps -fju $USER --forest``: Display the user's process tree
+``ps -fju $USER --forest``
+   Display the user's process tree
 
 .. code-block:: bash
 
@@ -368,9 +390,12 @@ Ctrl+Z
 ``kill``
 ========
 
-:``kill %JOB_INDEX``: Kill a job using the job's index
-:``kill PID``: Kill a process using the process's id
-:``kill -- -PGID``: Kill all process belonging to the process group id
+``kill %JOB_INDEX``
+   Kill a job using the job's index
+``kill PID``
+   Kill a process using the process's id
+``kill -- -PGID``
+   Kill all process belonging to the process group id
 
 .. code-block:: bash
 
@@ -384,13 +409,14 @@ Network Utilities
 ``rsync``
 =========
 
-:``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to
-destination, locally or remotely
+``rsync -arLv SRC [SRC ...] DEST``
+   Recursively copy from source to destination, locally or remotely
 
 Additional Options
 ------------------
 
---partial            Keep partially transferred files
+--partial
+   Keep partially transferred files
 --relative
    Copy "implied directories" as well as the last part of ``SRC``. Ex.:
    **foo/bar/** in:
@@ -418,19 +444,20 @@ Archiving
 ``tar``
 =======
 
-:``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of
-                                       directories
-:``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it
-                                       using gzip
-:``tar -xf TAR_NAME.tar -C DIR``:      Extract a .tar archive into a directory
-:``tar -xzf TAR_NAME.tar.gz -C DIR``:  Extract a .tar archive compressed with
-                                       gzip into a directory
+``tar -cvf TAR_NAME.tar DIR...``
+   Create a .tar archive with the content of directories
+``tar -czvf TAR_NAME.tar.gz DIR...``
+   Create a .tar archive and compress it using gzip
+``tar -xf TAR_NAME.tar -C DIR``
+   Extract a .tar archive into a directory
+``tar -xzf TAR_NAME.tar.gz -C DIR``
+   Extract a .tar archive compressed with gzip into a directory
 
 Additional Options
 ------------------
   
--r             Append files to the .tar archive. This replaces ``-c``.
---sort=name    Sort the directory entries on name.
+-r           Append files to the .tar archive. This replaces ``-c``.
+--sort=name  Sort the directory entries on name.
 
 **********
 Executable
@@ -439,10 +466,11 @@ Executable
 ``chmod`` (execute bit)
 ============================
 
-:``chmod +x script.sh``: Add the execute mode bit to a script file so it can be
-                         executed
+``chmod +x script.sh``
+   Add the execute mode bit to a script file so it can be executed
 
 Execute Script
 ==============
 
-:``./script.sh``: Execute a script
+``./script.sh``
+   Execute a script
