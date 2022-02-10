@@ -8,43 +8,44 @@ Command Line Cheat Sheet
 ########################
 
 \
+\
 
 .. list-table::
    :stub-columns: 1
    :widths: auto
 
    * - `Browsing`_
-     - `ls`_
-     - `cd`_
-     - `cp`_
-     - `mv`_
-     - `Tab Key`_
-     - `less`_
+     - `ls`_ --
+       `cd`_ --
+       `cp`_ --
+       `mv`_ --
+       `Tab Key`_ --
+       `less`_ --
    * - `Access Rights`_
-     - `chmod`_
-     - `setfacl`_
+     - `chmod`_ --
+       `setfacl`_ --
    * - `Help`_
-     - `man`_
-     - `-h | --help`_
+     - `man`_ --
+       `-h | --help`_ --
    * - `Disk Usage`_
-     - `du`_
+     - `du`_ --
    * - `Session Utilities`_
-     - `tmux`_
-     - `nohup`_
-     - `Ctrl+C`_
-     - `Ctrl+Z`_
-     - `jobs`_
-     - `fg`_
-     - `bg`_
-     - `ps`_
-     - `kill`_
+     - `tmux`_ --
+       `nohup`_ --
+       `Ctrl+C`_ --
+       `Ctrl+Z`_ --
+       `jobs`_ --
+       `fg`_ --
+       `bg`_ --
+       `ps`_ --
+       `kill`_ --
    * - `Network Utilities`_
-     - `rsync`_
+     - `rsync`_ --
    * - `Archiving`_
-     - `tar`_
+     - `tar`_ --
    * - `Executable`_
-     - `chmod (execute bit)`_
-     - `Execute Script`_
+     - `chmod (execute bit)`_ --
+       `Execute Script`_ --
 
 ********
 Browsing
