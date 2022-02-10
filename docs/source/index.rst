@@ -244,11 +244,12 @@ entry.
 
 Display help for a command. The information will be printed in the console.
 
-:``command (-h|--help)``:        | Display help for a command.
-                                 | `Commands might have either or both options
-                                    (` ``-h`` `,` ``--help`` `).`
-:``command (-h|--help) | less``: Useful to scroll text in a pager rather than
-                                 print it in the console
+``command (-h|--help)``
+   | Display help for a command.
+   | `Commands might have either or both options
+      (` ``-h`` `,` ``--help`` `).`
+``command (-h|--help) | less``
+   Useful to scroll text in a pager rather than print it in the console
 
 .. code-block:: bash
 
@@ -276,7 +277,8 @@ Disk Usage
 ``du``
 ======
 
-:``du -sh [DIR]``: Print the disk usage of a directory
+``du -sh [DIR]``
+   Print the disk usage of a directory
 
 .. code-block:: bash
 
@@ -293,10 +295,14 @@ Session Utilities
 Enables a number of terminals to be created, accessed, and controlled from a
 single screen.
 
-:``tmux``:           Open a new window
-:``tmux ls|list``:   List sessions
-:``tmux attach``:    Attach to the last detached window
-:``tmux attach -t SESSION_INDEX``: Attach to a detached session
+``tmux``
+   Open a new window
+``tmux ls|list``
+   List sessions
+``tmux attach``
+   Attach to the last detached window
+``tmux attach -t SESSION_INDEX``
+   Attach to a detached session
 
 Inside a tmux terminal
 ----------------------
@@ -325,23 +331,26 @@ Panes
 ``nohup``
 =========
 
-:``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal
-                      closes
+``nohup COMMAND &``
+   Run a command that will NOt HangUP when the terminal closes
 
 Ctrl+C
 ======
 
-:``Ctrl+C``: Interrupt the current command
+``Ctrl+C``
+   Interrupt the current command
 
 Ctrl+Z
 ======
 
-:``Ctrl+Z``: Stop (pause) and background the current command
+``Ctrl+Z``
+   Stop (pause) and background the current command
 
 ``jobs``
 ========
 
-:``jobs``: List the background jobs
+``jobs``
+   List the background jobs
 
 .. code-block:: bash
 
@@ -352,17 +361,20 @@ Ctrl+Z
 ``fg``
 ======
 
-:``fg``: Resume the job that's next in the queue
+``fg``
+   Resume the job that's next in the queue
 
 ``bg``
 ======
 
-:``bg``: Push the next job in the queue into the background
+``bg``
+   Push the next job in the queue into the background
 
 ``ps``
 ======
 
-:``ps -fju $USER --forest``: Display the user's process tree
+``ps -fju $USER --forest``
+   Display the user's process tree
 
 .. code-block:: bash
 
@@ -374,9 +386,12 @@ Ctrl+Z
 ``kill``
 ========
 
-:``kill %JOB_INDEX``: Kill a job using the job's index
-:``kill PID``: Kill a process using the process's id
-:``kill -- -PGID``: Kill all process belonging to the process group id
+``kill %JOB_INDEX``
+   Kill a job using the job's index
+``kill PID``
+   Kill a process using the process's id
+``kill -- -PGID``
+   Kill all process belonging to the process group id
 
 .. code-block:: bash
 
@@ -390,13 +405,14 @@ Network Utilities
 ``rsync``
 =========
 
-:``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to
-                                     destination, locally or remotely
+``rsync -arLv SRC [SRC ...] DEST``
+   Recursively copy from source to destination, locally or remotely
 
 Additional Options
 ------------------
 
---partial            Keep partially transferred files
+--partial
+   Keep partially transferred files
 --relative
    Copy "implied directories" as well as the last part of ``SRC``. Ex.:
    **foo/bar/** in:
@@ -424,19 +440,20 @@ Archiving
 ``tar``
 =======
 
-:``tar -cvf TAR_NAME.tar DIR...``:     Create a .tar archive with the content of
-                                       directories
-:``tar -czvf TAR_NAME.tar.gz DIR...``: Create a .tar archive and compress it
-                                       using gzip
-:``tar -xf TAR_NAME.tar -C DIR``:      Extract a .tar archive into a directory
-:``tar -xzf TAR_NAME.tar.gz -C DIR``:  Extract a .tar archive compressed with
-                                       gzip into a directory
+``tar -cvf TAR_NAME.tar DIR...``
+   Create a .tar archive with the content of directories
+``tar -czvf TAR_NAME.tar.gz DIR...``
+   Create a .tar archive and compress it using gzip
+``tar -xf TAR_NAME.tar -C DIR``
+   Extract a .tar archive into a directory
+``tar -xzf TAR_NAME.tar.gz -C DIR``
+   Extract a .tar archive compressed with gzip into a directory
 
 Additional Options
 ------------------
   
--r             Append files to the .tar archive. This replaces ``-c``.
---sort=name    Sort the directory entries on name.
+-r           Append files to the .tar archive. This replaces ``-c``.
+--sort=name  Sort the directory entries on name.
 
 **********
 Executable
@@ -445,10 +462,11 @@ Executable
 ``chmod`` (execute bit)
 ============================
 
-:``chmod +x script.sh``: Add the execute mode bit to a script file so it can be
-                         executed
+``chmod +x script.sh``
+   Add the execute mode bit to a script file so it can be executed
 
 Execute Script
 ==============
 
-:``./script.sh``: Execute a script
+``./script.sh``
+   Execute a script
