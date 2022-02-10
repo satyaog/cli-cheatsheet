@@ -163,6 +163,10 @@ more letters from the set ``rwxX``
 :``g``:  set group mode bits
 :``o``:  set other mode bits
 :``+-``:  add/remove mode bits
+
+``perms``
+^^^^^^^^^
+
 :``r``:  read bit
 :``w``:  write bit
 :``x``:  execute bit
@@ -187,6 +191,9 @@ is one or more letters from the set ``rwxX``
                      from the set ``rwxX``
 :``o:perms``:  Set other mode bits where ``perms`` is one or more letters from
                the set ``rwxX``
+
+``perms``
+^^^^^^^^^
 
 :``r``: read bit
 :``w``: write bit
