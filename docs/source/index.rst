@@ -54,7 +54,7 @@ Browsing
 ======
 
 ``ls [-lh] [DIR]``
-   List file and directories
+   List files and directories
 
 .. code-block:: bash
 
