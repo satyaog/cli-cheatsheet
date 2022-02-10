@@ -54,7 +54,8 @@ Browsing
 ``ls``
 ======
 
-:``ls [-lh] [DIR]``: List file and directories
+``ls [-lh] [DIR]``
+   List file and directories
 
 .. code-block:: bash
 
@@ -74,7 +75,8 @@ Browsing
 ``cd``
 ======
 
-:``cd DIR``: Change current location to a directory
+``cd DIR``
+   Change current location to a directory
 
 .. code-block:: bash
 
