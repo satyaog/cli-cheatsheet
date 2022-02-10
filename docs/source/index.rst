@@ -201,6 +201,7 @@ is one or more letters from the set ``rwxX``
 :``X``: execute bit if already set or if the target is a directory
 
 \
+\
 
 .. code-block:: bash
 
