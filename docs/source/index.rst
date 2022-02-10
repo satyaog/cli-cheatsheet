@@ -161,6 +161,7 @@ more letters from the set ``rwxX``
 ===========
 
 :``setfacl {--set[-file]|--modify[-file]} MODE {DIR|FILE}``:
+
     Set (purge previous acl permissions) or modify file access control lists.
     ``--set[-file]`` requires permissions of user, group and other to be listed.
 
