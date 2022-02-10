@@ -89,8 +89,10 @@ Browsing
 ``cp``
 ======
 
-:``cp SRC DEST``:       Copy a file or directory.
-:``cp -Rt DIR SRC...``: Copy files and/or directories to a directory.
+``cp SRC DEST``
+   Copy a file or directory.
+``cp -Rt DIR SRC...``
+   Copy files and/or directories to a directory.
 
 ``mv``
 ======
