@@ -1,5 +1,5 @@
-.. Command Line Cheat Sheet documentation mVaster file, created by
-   sphinx-quickstart on Wed Oct  9 15:43:28 2019.  You can adapt this file
+.. Command Line Cheat Sheet documentation master file, created by
+   sphinx-quickstart on Wed Oct 9 15:43:28 2019. You can adapt this file
    completely to your liking, but it should at least contain the root `toctree`
    directive.
 
@@ -15,36 +15,36 @@ Command Line Cheat Sheet
    :width: 100%
 
    * - `Browsing`_
-     - `ls`_ ---
-       `cd`_ ---
-       `cp`_ ---
-       `mv`_ ---
-       `Tab Key`_ ---
+     - `ls`_ \  
+       `cd`_ \  
+       `cp`_ \  
+       `mv`_ \  
+       `Tab Key`_ \  
        `less`_
    * - `Access Rights`_
-     - `chmod`_ ---
+     - `chmod`_ \  
        `setfacl`_
    * - `Help`_
-     - `man`_ ---
+     - `man`_ \  
        `-h | \--help`_
    * - `Disk Usage`_
      - `du`_
    * - `Session Utilities`_
-     - `tmux`_ ---
-       `nohup`_ ---
-       `Ctrl+C`_ ---
-       `Ctrl+Z`_ ---
-       `jobs`_ ---
-       `fg`_ ---
-       `bg`_ ---
-       `ps`_ ---
+     - `tmux`_ \  
+       `nohup`_ \  
+       `Ctrl+C`_ \  
+       `Ctrl+Z`_ \  
+       `jobs`_ \  
+       `fg`_ \  
+       `bg`_ \  
+       `ps`_ \  
        `kill`_
    * - `Network Utilities`_
      - `rsync`_
    * - `Archiving`_
      - `tar`_
    * - `Executable`_
-     - `chmod (execute bit)`_ ---
+     - `chmod (execute bit)`_ \  
        `Execute Script`_
 
 ********
