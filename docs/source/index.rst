@@ -388,7 +388,7 @@ Network Utilities
 =========
 
 :``rsync -arLv SRC [SRC ...] DEST``: Recursively copy from source to
-destination, locally or remotely
+                                     destination, locally or remotely
 
 Additional Options
 ------------------
