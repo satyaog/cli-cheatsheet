@@ -26,7 +26,7 @@ Command Line Cheat Sheet
        `setfacl`_
    * - `Help`_
      - `man`_ ---
-       `-h | --help`_
+       `-h | \--help`_
    * - `Disk Usage`_
      - `du`_
    * - `Session Utilities`_
