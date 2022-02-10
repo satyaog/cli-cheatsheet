@@ -165,8 +165,6 @@ more letters from the set ``rwxX``
 :``+-``:  add/remove mode bits
 
 ``perms``
-^^^^^^^^^
-
 :``r``:  read bit
 :``w``:  write bit
 :``x``:  execute bit
@@ -193,15 +191,10 @@ is one or more letters from the set ``rwxX``
                the set ``rwxX``
 
 ``perms``
-^^^^^^^^^
-
 :``r``: read bit
 :``w``: write bit
 :``x``: execute bit
 :``X``: execute bit if already set or if the target is a directory
-
-\
-\
 
 .. code-block:: bash
 
