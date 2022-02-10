@@ -14,12 +14,12 @@ Command Line Cheat Sheet
    :width: 100%
 
    * - `Browsing`_
-     - **`ls`_** ---
-       **`cd`_** ---
-       **`cp`_** ---
-       **`mv`_** ---
-       **`Tab Key`_** ---
-       **`less`_**
+     - `ls`_ *---*
+       `cd`_ *---*
+       `cp`_ *---*
+       `mv`_ *---*
+       `Tab Key`_ *---*
+       `less`_
    * - `Access Rights`_
      - `chmod`_ ---
        `setfacl`_
