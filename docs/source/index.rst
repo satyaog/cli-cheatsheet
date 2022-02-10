@@ -323,7 +323,7 @@ Panes
 =========
 
 :``nohup COMMAND &``: Run a command that will NOt HangUP when the terminal
-closes
+                      closes
 
 Ctrl+C
 ======
