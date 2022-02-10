@@ -11,8 +11,8 @@ Command Line Cheat Sheet
 
 .. list-table::
    :header-rows: 1
+   :stub-columns: 1
    :widths: auto
-   :stub-columns: 8
 
    * - `Browsing`_
      - `Access Rights`_
