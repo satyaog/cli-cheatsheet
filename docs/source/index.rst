@@ -8,11 +8,10 @@ Command Line Cheat Sheet
 ########################
 
 \
-\
 
 .. list-table::
    :stub-columns: 1
-   :widths: auto
+   :width: 100%
 
    * - `Browsing`_
      - `ls`_ --
@@ -20,15 +19,15 @@ Command Line Cheat Sheet
        `cp`_ --
        `mv`_ --
        `Tab Key`_ --
-       `less`_ --
+       `less`_
    * - `Access Rights`_
      - `chmod`_ --
-       `setfacl`_ --
+       `setfacl`_
    * - `Help`_
      - `man`_ --
-       `-h | --help`_ --
+       `-h | --help`_
    * - `Disk Usage`_
-     - `du`_ --
+     - `du`_
    * - `Session Utilities`_
      - `tmux`_ --
        `nohup`_ --
@@ -38,14 +37,14 @@ Command Line Cheat Sheet
        `fg`_ --
        `bg`_ --
        `ps`_ --
-       `kill`_ --
+       `kill`_
    * - `Network Utilities`_
-     - `rsync`_ --
+     - `rsync`_
    * - `Archiving`_
-     - `tar`_ --
+     - `tar`_
    * - `Executable`_
      - `chmod (execute bit)`_ --
-       `Execute Script`_ --
+       `Execute Script`_
 
 ********
 Browsing
