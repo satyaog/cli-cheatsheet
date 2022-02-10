@@ -11,6 +11,7 @@ Command Line Cheat Sheet
 
 .. list-table::
    :stub-columns: 1
+   :widths: auto
    :width: 100%
 
    * - `Browsing`_
