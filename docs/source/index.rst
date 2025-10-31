@@ -16,6 +16,8 @@ Command Line Cheat Sheet
    * - `Browsing`_
      - `ls`_ *---*
        `cd`_ *---*
+       `mkdir`_ *---*
+       `rm`_ *---*
        `cp`_ *---*
        `mv`_ *---*
        `Tab Key`_ *---*
@@ -84,6 +86,47 @@ Browsing
     $ cd proj1
     $ ls
     proj1_file1	proj1_file2
+
+``mkdir``
+=========
+
+``mkdir [-p] DIR``
+   Create the DIRECTORY(ies), if they do not already exist
+
+.. code-block:: bash
+
+    $ ls
+    file1  file2  proj1  proj2
+    $ mkdir proj3
+    $ mkdir -p proj4/subdir/subsubdir
+    $ ls -l
+    total 16
+    -rw-rw-r-- 1 user   group    0 Oct 31 11:27 file1
+    -rw-rw-r-- 1 user   group    0 Oct 31 11:27 file2
+    drwxrwxr-x 2 user   group 4096 Oct 31 11:27 proj1
+    drwxrwxr-x 2 user   group 4096 Oct 31 11:28 proj2
+    drwxrwxr-x 2 user   group 4096 Oct 31 11:28 proj3
+    drwxrwxr-x 3 user   group 4096 Oct 31 11:29 proj4
+    $ ls -l proj4/subdir
+    total 4
+    drwxrwxr-x 2 user   group 4096 Oct 31 11:29 subsubdir
+
+``rm``
+======
+
+``rm [-r] FILE``
+   remove files or directories
+
+.. code-block:: bash
+
+    $ ls
+    file1  file2  proj1  proj2
+    $ rm file1
+    $ ls
+    file2  proj1  proj2
+    $ rm -r proj1
+    $ ls
+    file2  proj2
 
 ``cp``
 ======
@@ -227,7 +270,7 @@ entry.
 
 .. code-block:: bash
 
-    $ `man ls
+    $ man ls
     LS(1)                     BSD General Commands Manual                    LS(1)
 
     NAME
