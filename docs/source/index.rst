@@ -142,7 +142,7 @@ Browsing
 ``mv SRC DEST``
    Move or rename a file or directory.
 ``mv -t DIR SRC...``
-   Move files and/or directories to a directory. 
+   Move files and/or directories to a directory.
 
 Tab Key
 =======
@@ -216,9 +216,11 @@ more letters from the set ``rwxX``
 ``setfacl``
 ===========
 
-``setfacl {--set[-file]|--modify[-file]} MODE {DIR|FILE}``
+``setfacl [--default] [--recursive] {--set[-file]|--modify[-file]} MODE {DIR|FILE}``
     Set (purge previous acl permissions) or modify file access control lists.
     ``--set[-file]`` requires permissions of user, group and other to be listed.
+    ``--default`` sets the default permissions to be applied to future files
+    created in the directory.
 
 ``MODE`` format
 ---------------
@@ -230,8 +232,8 @@ is one or more letters from the set ``rwxX``
                      from the set ``rwxX``
 :``[g:]gid:perms``:  Set group mode bits where ``perms`` is one or more letters
                      from the set ``rwxX``
-:``o:perms``:  Set other mode bits where ``perms`` is one or more letters from
-               the set ``rwxX``
+:``o:perms``:        Set other mode bits where ``perms`` is one or more letters
+                     from the set ``rwxX``
 
 \
 
@@ -242,16 +244,54 @@ is one or more letters from the set ``rwxX``
 
 .. code-block:: bash
 
-    $ setfacl --set u::rwx,g::-,o::-,g:groupid:rwx dir/
-    $ getfacl dir/
-    # file: dir/
+    $ setfacl --default --recursive --set u:$USER:rwx,u:otheruserid:rwx dir/
+    $ getfacl --recursive dir/
+    # file: dir
     # owner: ownerid
     # group: groupid
     user::rwx
-    group::---
-    group:groupid:rwx
+    group::rwx
+    other::r-x
+    default:user::rwx
+    default:user:otheruserid:rwx
+    default:user:userid:rwx
+    default:group::rwx
+    default:mask::rwx
+    default:other::r-x
+
+    # file: dir/file
+    # owner: ownerid
+    # group: groupid
+    user::rw-
+    group::rw-
+    other::r--
+    $ setfacl --recursive --modify u:$USER:rwx,u:otheruserid:rwx dir/
+    $ getfacl --recursive dir/
+    # file: dir
+    # owner: ownerid
+    # group: groupid
+    user::rwx
+    user:otheruserid:rwx
+    user:userid:rwx
+    group::rwx
     mask::rwx
-    other::---
+    other::r-x
+    default:user::rwx
+    default:user:otheruserid:rwx
+    default:user:userid:rwx
+    default:group::rwx
+    default:mask::rwx
+    default:other::r-x
+
+    # file: dir/file
+    # owner: ownerid
+    # group: groupid
+    user::rw-
+    user:otheruserid:rwx
+    user:userid:rwx
+    group::rw-
+    mask::rwx
+    other::r--
 
 ****
 Help
@@ -265,7 +305,7 @@ entry.
 
 ``man COMMAND``
    Open the help manual (man page) of a command.
-   
+
    `The manual will be shown in a pager.`
 
 .. code-block:: bash
@@ -463,19 +503,19 @@ Additional Options
 --relative
    Copy "implied directories" as well as the last part of ``SRC``. Ex.:
    **foo/bar/** in:
-   
+
    ``rsync -arLv --relative /foo/bar/baz.c ...``
 
    Inserting a **./** in a ``SRC`` path will limit the amount of path
    information that is sent as implied directories. Ex.: **bar/** in:
-   
+
    ``rsync -arLv --relative /foo/./bar/baz.c ...``
 --bwlimit=RATE
    Specify the maximum transfer rate for the data sent over the *socket*,
    specified in units per second. Ex.: 10 megabytes/sec bandwidth:
 
    ``rsync -arLv --bwlimit=10mb REMOTE:/foo/ foo/``
-   
+
    ``rsync -arLv --bwlimit=10mb foo/ REMOTE:/foo/``
 -e <"ssh -p PORT">
    Use a non-standard SSH port
@@ -498,7 +538,7 @@ Archiving
 
 Additional Options
 ------------------
-  
+
 -r           Append files to the .tar archive. This replaces ``-c``.
 --sort=name  Sort the directory entries on name.
 
