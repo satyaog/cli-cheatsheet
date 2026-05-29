@@ -527,14 +527,18 @@ Archiving
 ``tar``
 =======
 
-``tar -cvf TAR_NAME.tar DIR...``
-   Create a .tar archive with the content of directories
-``tar -czvf TAR_NAME.tar.gz DIR...``
-   Create a .tar archive and compress it using gzip
+``tar -cvf TAR_NAME.tar --sort=name -ML100G DIR...``
+   Create a multi-volume .tar archive (max 100G per volume) with the content of
+   directories
+``tar -cvvf TAR_NAME.tar -ML100G DIR >TAR_NAME.index``
+   Create a multi-volume .tar archive (max 100G per volume) from a directory and
+   save the file listing to TAR_NAME.index
+``tar -tvvf TAR_NAME.tar >TAR_NAME.index``
+   Generate an index file from an existing .tar archive
 ``tar -xf TAR_NAME.tar -C DIR``
    Extract a .tar archive into a directory
-``tar -xzf TAR_NAME.tar.gz -C DIR``
-   Extract a .tar archive compressed with gzip into a directory
+``tar -xf TAR_NAME.tar -C DIR FILE...``
+   Extract specific files from a .tar archive into a directory
 
 Additional Options
 ------------------
